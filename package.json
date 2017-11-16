@@ -4,6 +4,7 @@
   "description": "Online game for multiple clients to connect and race each other for who can click the fastest in a game of tug of war.",
   "main": "server.js",
   "scripts": {
+    "start": "nodemon server.js",
     "test": "npm test"
   },
   "repository": {
@@ -18,5 +19,9 @@
   "bugs": {
     "url": "https://github.com/Joelasaur/tugofwar/issues"
   },
-  "homepage": "https://github.com/Joelasaur/tugofwar#readme"
+  "homepage": "https://github.com/Joelasaur/tugofwar#readme",
+  "dependencies": {
+    "mocha": "^4.0.1",
+    "socket.io": "^2.0.4"
+  }
 }

@@ -19,6 +19,39 @@ var io = socketio(server);
 //Just for static files (like usual).  Eg. index.html, client.js, etc.
 app.use(express.static("pub"));
 
+var position = 0;
+
+//Every time a client connects (visits the page) this function(socket) {...} gets executed.
+//The socket is a different object each time a new client connects.
+io.on("connection", function(socket) {
+	console.log("Somebody connected.");
+	socket.emit("updatePosition", position);
+
+
+	socket.on("left", function() {
+		position -= 20;
+		if(position <= -496) {
+			io.emit("leftVictory");
+			position = 0;
+		}
+		else {
+			io.emit("updatePosition", position);
+		}
+		
+	});
+	socket.on("right", function() {
+		position += 20;
+		if(position >= 496) {
+			io.emit("rightVictory");
+			position = 0;
+		}
+		else {
+			io.emit("updatePosition", position);
+		}
+	});
+});
+
+
 
 server.listen(80, function() {
 	console.log("Server is listening on port 80");
