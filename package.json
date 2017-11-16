@@ -1,0 +1,22 @@
+{
+  "name": "tugofwar",
+  "version": "1.0.0",
+  "description": "Online game for multiple clients to connect and race each other for who can click the fastest in a game of tug of war.",
+  "main": "server.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Joelasaur/tugofwar.git"
+  },
+  "keywords": [
+    "tugofwar"
+  ],
+  "author": "Joel Whalen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Joelasaur/tugofwar/issues"
+  },
+  "homepage": "https://github.com/Joelasaur/tugofwar#readme"
+}
